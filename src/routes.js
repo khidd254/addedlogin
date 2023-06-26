@@ -1,6 +1,7 @@
 import DashView from './components/Dash.vue'
 import LoginView from './components/Login.vue'
 import NotFoundView from './components/404.vue'
+import SignupView from './components/widgets/Signup.vue'
 
 // Import Views - Dash
 import DashboardView from './components/views/Dashboard.vue'
@@ -18,6 +19,10 @@ const routes = [
     component: LoginView
   },
   {
+    path: '/widgets/signup',
+    component: SignupView
+  },
+  {
     path: '/',
     component: DashView,
     children: [
@@ -26,41 +31,47 @@ const routes = [
         alias: '',
         component: DashboardView,
         name: 'Dashboard',
-        meta: {description: 'Overview of environment'}
-      }, {
+        meta: { description: 'Overview of environment' }
+      },
+      {
         path: 'tables',
         component: TablesView,
         name: 'Tables',
-        meta: {description: 'Simple and advance table in CoPilot'}
-      }, {
+        meta: { description: 'Simple and advance table in CoPilot' }
+      },
+      {
         path: 'tasks',
         component: TasksView,
         name: 'Tasks',
-        meta: {description: 'Tasks page in the form of a timeline'}
-      }, {
+        meta: { description: 'Tasks page in the form of a timeline' }
+      },
+      {
         path: 'setting',
         component: SettingView,
         name: 'Settings',
-        meta: {description: 'User settings page'}
+        meta: { description: 'User settings page' }
       },
       {
         path: 'access',
         component: AccessView,
         name: 'Access',
-        meta: {description: 'Example of using maps'}
-      }, {
+        meta: { description: 'Example of using maps' }
+      },
+      {
         path: 'server',
         component: ServerView,
         name: 'Servers',
-        meta: {description: 'List of our servers', requiresAuth: true}
-      }, {
+        meta: { description: 'List of our servers', requiresAuth: true }
+      },
+      {
         path: 'repos',
         component: ReposView,
         name: 'Repository',
-        meta: {description: 'List of popular javascript repos'}
+        meta: { description: 'List of popular JavaScript repos' }
       }
     ]
-  }, {
+  },
+  {
     // not found handler
     path: '*',
     component: NotFoundView

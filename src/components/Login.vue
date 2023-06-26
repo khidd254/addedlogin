@@ -15,7 +15,7 @@
           <input class="form-control" name="password" placeholder="Password" type="password" v-model="password">
         </div>
         <button type="submit" v-bind:class="'btn btn-primary btn-lg ' + loading">Submit</button>
-        <a href="#">Sign up</a>
+        <router-link to="/widgets/signup" class="signup-link">Sign up</router-link>
       </form>
 
       <!-- errors -->
@@ -164,5 +164,12 @@ body,
 .input-group-addon i {
   height: 15px;
   width: 15px;
+}
+
+.signup-link {
+  display: block;
+  margin-top: 10px;
+  color: #fff;
+  text-decoration: underline;
 }
 </style>
